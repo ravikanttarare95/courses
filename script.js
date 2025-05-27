@@ -59,9 +59,9 @@ function renderCards() {
       
         <h3 class="course-title">${element.courseTitle}</h3>
         <p class="course-description">${element.courseDescription}</p>
-        <p class="course-date"><strong>Date:</strong> ${element.courseDate}</p>
-        <p class="course-time"><strong>Time:</strong> ${element.courseTime}</p>
-        <p class="course-instructor"><strong>Instructor:</strong> ${element.courseInstructor}</p>
+        <p class="course-date">🗓️ <strong>Date:</strong> ${element.courseDate}</p>
+        <p class="course-time">⏱️ <strong>Time:</strong> ${element.courseTime}</p>
+        <div class="course-instructor"><img src="./"/ class="instructor-image"> <div><p><strong>Instructor:</strong> ${element.courseInstructor}</p><p> Instructor </p></div></div>
         <p class="price"><strong>Price:</strong> ₹${element.coursePrice}</p>
       </div>
     `;
