@@ -47,15 +47,15 @@ function clearInput() {
 function renderCards() {
   cardContainer.innerHTML = "";
 
-  existingCards.forEach((card, index) => {
+  existingCards.map((element, index) => {
     cardContainer.innerHTML += `
       <div class="card">
-        <h2>${card.courseTitle}</h2>
-        <p>${card.courseDescription}</p>
-        <p><strong>Date:</strong> ${card.courseDate}</p>
-        <p><strong>Time:</strong> ${card.courseTime}</p>
-        <p><strong>Instructor:</strong> ${card.courseInstructor}</p>
-        <p><strong>Price:</strong> $${card.coursePrice}</p>
+        <h2>${element.courseTitle}</h2>
+        <p>${element.courseDescription}</p>
+        <p><strong>Date:</strong> ${element.courseDate}</p>
+        <p><strong>Time:</strong> ${element.courseTime}</p>
+        <p><strong>Instructor:</strong> ${element.courseInstructor}</p>
+        <p><strong>Price:</strong> $${element.coursePrice}</p>
       </div>
     `;
   });
