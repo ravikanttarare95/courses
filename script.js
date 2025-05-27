@@ -5,13 +5,13 @@ let courseDate = document.getElementById("course-date");
 let courseTime = document.getElementById("course-time");
 let courseInstructor = document.getElementById("course-instructor-name");
 let coursePrice = document.getElementById("course-price");
-let courseImage = document.getElementById("course-image");
+let courseImageURL = document.getElementById("course-image-url");
 
 let existingCards = JSON.parse(localStorage.getItem("CourseCards")) || [];
 
 function addcard() {
   if (
-    // !courseImage.src ||
+    !courseImageURL.value ||
     !courseTitle.value ||
     !courseDescription.value ||
     !courseDate.value ||
@@ -24,7 +24,7 @@ function addcard() {
   }
 
   let newCard = {
-    // courseImage: courseImage.src,
+    courseImageURL: courseImageURL.value,
     courseTitle: courseTitle.value,
     courseDescription: courseDescription.value,
     courseDate: courseDate.value,
@@ -39,7 +39,7 @@ function addcard() {
 }
 
 function clearInput() {
-  // courseImage.src = "";
+  courseImageURL.value = "";
   courseTitle.value = "";
   courseDescription.value = "";
   courseDate.value = "";
@@ -52,10 +52,13 @@ function renderCards() {
   cardContainer.innerHTML = "";
 
   existingCards.map((element, index) => {
+
+    console.log(courseImageURL.value);
+
     cardContainer.innerHTML += `
       <div class="card">
 
-        <img src="${courseImage.files}" alt="Course Image" class="course-image">
+        <img src="${element.courseImageURL}" alt="Course Image" class="course-image"/>
       
         <h3 class="course-title">${element.courseTitle}</h3>
         <p class="course-description">${element.courseDescription}</p>
