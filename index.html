@@ -13,15 +13,20 @@
             color: #333;
         }
 
+        h2 {
+            font-family: Arial, sans-serif;
+            color: #555;
+            margin: 0 0 40px 0;
+        }
+
         input {
-            width: 300px;
+            width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
             margin-bottom: 20px;
             font-size: 16px;
         }
-
     </style>
 </head>
 
@@ -29,6 +34,8 @@
     <h1>Courses Cards</h1>
 
     <form class="courses-cards-form">
+        <h2>Enter Course Details</h2>
+        <input type="file" id="course-image" accept="image/*" required>
         <input id="course-title" type="text" placeholder="Enter Title" required>
         <input id="course-description" type="text" placeholder="Enter Description" required>
         <input id="course-date" type="text" placeholder="Enter Date" required>

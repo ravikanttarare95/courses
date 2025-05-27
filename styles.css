@@ -14,8 +14,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   background: white;
-  width: 400px;
+  max-width: 400px;
   padding: 40px;
   margin: 50px auto;
   border-radius: 8px;
@@ -32,6 +33,7 @@ body {
   cursor: pointer;
   font-size: 16px;
 }
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -51,7 +53,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card h2 {
+.card h3 {
   color: #333;
   margin-bottom: 10px;
   font-size: 1.5rem;
