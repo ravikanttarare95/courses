@@ -45,47 +45,34 @@
             align-items: center;
             margin-bottom: 20px;
         }
+
+        .btn-add {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
     </style>
 </head>
 
 <body>
     <h1>Courses Cards</h1>
+
     <form class="courses-cards-form">
-        <input type="text" placeholder="Enter Title">
-        <input type="text" placeholder="Enter Description">
-        <input type="text" placeholder="Enter Date">
-        <input type="text" placeholder="Enter Time">
-        <input type="text" placeholder="Enter Instructor">
-        <input type="text" placeholder="Enter Price">
+        <input id="course-title" type="text" placeholder="Enter Title" required>
+        <input id="course-description" type="text" placeholder="Enter Description" required>
+        <input id="course-date" type="text" placeholder="Enter Date" required>
+        <input id="course-time" type="text" placeholder="Enter Time" required>
+        <input id="course-instructor-name" type="text" placeholder="Enter Instructor Name" required>
+        <input id="course-price" type="text" placeholder="Enter Price" required>
     </form>
-    <div class="cards-container">
-        <div class="card">
-            <h2> Card 1</h2>
-            <p>This is the first card.</p>
-            <p>2023-10-01</p>
-            <p>10:00 AM</p>
-            <p>John Doe</p>
-            <p>$10</p>
-            <p>know More</p>
-        </div>
-        <div class="card">
-            <h2> Card 2</h2>
-            <p>This is the first card.</p>
-            <p>2023-10-01</p>
-            <p>10:00 AM</p>
-            <p>John Doe</p>
-            <p>$10</p>
-            <p>know More</p>
-        </div>
-        <div class="card">
-            <h2> Card 2</h2>
-            <p>This is the first card.</p>
-            <p>2023-10-01</p>
-            <p>10:00 AM</p>
-            <p>John Doe</p>
-            <p>$10</p>
-            <p>know More</p>
-        </div>
+
+    <button type="submit" class="btn-add" onclick="addcard()">Add Card</button>
+
+    <div class="cards-container" id="cards-container"> </div>
     </div>
     <script src="script.js"></script>
 </body>
