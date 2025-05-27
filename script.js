@@ -50,12 +50,12 @@ function renderCards() {
   existingCards.map((element, index) => {
     cardContainer.innerHTML += `
       <div class="card">
-        <h2>${element.courseTitle}</h2>
-        <p>${element.courseDescription}</p>
-        <p><strong>Date:</strong> ${element.courseDate}</p>
-        <p><strong>Time:</strong> ${element.courseTime}</p>
-        <p><strong>Instructor:</strong> ${element.courseInstructor}</p>
-        <p><strong>Price:</strong> $${element.coursePrice}</p>
+        <h2 class="course-title">${element.courseTitle}</h2>
+        <p class="course-description">${element.courseDescription}</p>
+        <p class="course-date"><strong>Date:</strong> ${element.courseDate}</p>
+        <p class="course-time"><strong>Time:</strong> ${element.courseTime}</p>
+        <p class="course-instructor"><strong>Instructor:</strong> ${element.courseInstructor}</p>
+        <p class="price"><strong>Price:</strong> $${element.coursePrice}</p>
       </div>
     `;
   });
