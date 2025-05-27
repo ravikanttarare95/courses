@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        .courses-cards-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Courses Cards</h1>
+    <form class="courses-cards-form">
+        <input type="text" placeholder="Enter Title">
+        <input type="text" placeholder="Enter Description">
+        <input type="text" placeholder="Enter Date">
+        <input type="text" placeholder="Enter Time">
+        <input type="text" placeholder="Enter Instructor">
+        <input type="text" placeholder="Enter Price">
+    </form>
+    <div class="cards-container">
+        <div class="card">
+            <h2> Card 1</h2>
+            <p>This is the first card.</p>
+            <p>2023-10-01</p>
+            <p>10:00 AM</p>
+            <p>John Doe</p>
+            <p>$10</p>
+            <p>know More</p>
+        </div>
+        <div class="card">
+            <h2> Card 2</h2>
+            <p>This is the first card.</p>
+            <p>2023-10-01</p>
+            <p>10:00 AM</p>
+            <p>John Doe</p>
+            <p>$10</p>
+            <p>know More</p>
+        </div>
+        <div class="card">
+            <h2> Card 2</h2>
+            <p>This is the first card.</p>
+            <p>2023-10-01</p>
+            <p>10:00 AM</p>
+            <p>John Doe</p>
+            <p>$10</p>
+            <p>know More</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
