@@ -1,0 +1,70 @@
+form {
+  padding: 20px;
+}
+
+.sign-up-container {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 5px 10px #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+.sign-up-container:hover {
+  box-shadow: 3px 5px 15px #bcbcbc;
+}
+
+.name-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.name-container div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.name-container div input {
+  width: 65%;
+}
+
+input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.dob-container {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-btn-container {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-btn-container div {
+  display: flex;
+  gap: 5px;
+}
+
+@media (max-width: 600px) {
+  .name-container div label {
+    display: none;
+  }
+
+  .name-container div input {
+    width: 100%;
+  }
+}
