@@ -118,8 +118,8 @@ nav {
 .user-icon-container img {
   width: 100%;
   filter: brightness(0.8) invert(1);
+  display: block;
 }
-
 
 @media (max-width: 600px) {
   .navbar {

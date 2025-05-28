@@ -37,7 +37,9 @@ function addcard() {
   };
   existingCards.push(newCard);
   localStorage.setItem("CourseCards", JSON.stringify(existingCards));
-  alert("Course added successfully!");
+  alert(`
+Course added successfully!
+Check your Card in All Courses Page!`);
   clearInput();
   renderCards();
 }
