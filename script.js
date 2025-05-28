@@ -6,6 +6,7 @@ let courseTime = document.getElementById("course-time");
 let courseInstructor = document.getElementById("course-instructor-name");
 let coursePrice = document.getElementById("course-price");
 let courseImageURL = document.getElementById("course-image-url");
+let InstructorImageURL = document.getElementById("instructor-image-url");
 
 let existingCards = JSON.parse(localStorage.getItem("CourseCards")) || [];
 
@@ -16,6 +17,7 @@ function addcard() {
     !courseDescription.value ||
     !courseDate.value ||
     !courseTime.value ||
+    !InstructorImageURL.value ||
     !courseInstructor.value ||
     !coursePrice.value
   ) {
@@ -29,6 +31,7 @@ function addcard() {
     courseDescription: courseDescription.value,
     courseDate: courseDate.value,
     courseTime: courseTime.value,
+    InstructorImageURL: InstructorImageURL.value,
     courseInstructor: courseInstructor.value,
     coursePrice: coursePrice.value,
   };
@@ -44,6 +47,7 @@ function clearInput() {
   courseDescription.value = "";
   courseDate.value = "";
   courseTime.value = "";
+  InstructorImageURL.value = "";
   courseInstructor.value = "";
   coursePrice.value = "";
 }
@@ -51,23 +55,43 @@ function clearInput() {
 function renderCards() {
   cardContainer.innerHTML = "";
 
-  existingCards.map((element, index) => {
+  const categorySelected = document.getElementById("select-Course").value;
+  let filteredCourseTitle = existingCards;
 
-    console.log(courseImageURL.value);
+  if (categorySelected !== "all") {
+    filteredCourseTitle = existingCards.filter((element) => {
+      return element.courseTitle === categorySelected;
+    });
+  }
 
+  filteredCourseTitle.map((element) => {
     cardContainer.innerHTML += `
       <div class="card">
 
         <img src="${element.courseImageURL}" alt="Course Image" class="course-image"/>
-      
+      <div class="course-details">
         <h3 class="course-title">${element.courseTitle}</h3>
         <p class="course-description">${element.courseDescription}</p>
         <p class="course-date">🗓️ <strong>Date:</strong> ${element.courseDate}</p>
         <p class="course-time">⏱️ <strong>Time:</strong> ${element.courseTime}</p>
-        <div class="course-instructor"><img src="./"/ class="instructor-image"> <div><p><strong>Instructor:</strong> ${element.courseInstructor}</p><p> Instructor </p></div></div>
-        <p class="price"><strong>Price:</strong> ₹${element.coursePrice}</p>
+      </div>
+              <hr>
+      <div class="course-instructor">
+          <img src="${element.InstructorImageURL}"/ class="instructor-image">
+          <div>
+              <p><strong>Instructor:</strong> ${element.courseInstructor}</p>
+              <p> Instructor </p>
+          </div>
+      </div>
+              <hr>
+          <p class="price"><strong>Price:</strong> ₹${element.coursePrice}</p>
       </div>
     `;
   });
 }
 renderCards();
+
+// function filterCards() {
+
+// renderCards();
+// }

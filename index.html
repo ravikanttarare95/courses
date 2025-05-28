@@ -27,6 +27,21 @@
             margin-bottom: 20px;
             font-size: 16px;
         }
+
+        .filter-container {
+            margin-bottom: 50px;
+            background: #ffc8c8;
+            padding: 10px 70px;
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2rem;
+
+        }
+
+        select {
+            padding: 5px 10px;
+            margin-left: 20px;
+        }
     </style>
 </head>
 
@@ -35,18 +50,31 @@
 
     <form class="courses-cards-form">
         <h2>Enter Course Details</h2>
-        <input type="text" id="course-image-url" placeholder="Enter URL of Image" required>
+        <input type="text" id="course-image-url" placeholder="Enter URL of Course Image" required>
         <input id="course-title" type="text" placeholder="Enter Title" required>
         <input id="course-description" type="text" placeholder="Enter Description" required>
         <input id="course-date" type="text" placeholder="Enter Starting Date" required>
         <input id="course-time" type="text" placeholder="Enter Class Time" required>
+        <input type="text" id="instructor-image-url" placeholder="Enter URL of Instructor Image" required>
         <input id="course-instructor-name" type="text" placeholder="Enter Instructor Name" required>
         <input id="course-price" type="text" placeholder="Enter Price" required>
-        <button type="submit" class="btn-add" onclick="addcard()">Add Card</button>
+        <button type="button" class="btn-add" onclick="addcard()">Add Card</button>
     </form>
 
-    <div class="cards-container" id="cards-container"> </div>
+    <div class="filter-container">
+        <form>
+            <label for="select-Course">Filter Courses:</label>
+            <select name="select-Course" id="select-Course" onchange="renderCards()">
+                <option value="all">All</option>
+                <option value="aws">AWS</option>
+                <option value="web">WEB</option>
+                <option value="python">Python</option>
+                <option value="android">Android</option>
+            </select>
+        </form>
     </div>
+
+    <div class="cards-container" id="cards-container"> </div>
     <script src="script.js"></script>
 </body>
 
