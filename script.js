@@ -37,6 +37,7 @@ function addcard() {
   };
   existingCards.push(newCard);
   localStorage.setItem("CourseCards", JSON.stringify(existingCards));
+  alert("Course added successfully!");
   clearInput();
   renderCards();
 }

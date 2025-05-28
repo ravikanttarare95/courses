@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Courses</title>
+    <link rel="stylesheet" href="./../style.css">
+    <link rel="stylesheet" href="./../css/add-courses.css">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="./../index.html">Home</a></li>
+                <li class="nav-item"><a href="./add-courses.html">Add Courses</a></li>
+                <li class="nav-item"><a href="./../pages/all-courses.html">All Courses</a></li>
+            </ul>
+            <ul class="nav-login-container">
+                <li>
+                    <a href="./sign-up.html">
+                        <img src="./../images/sign-up.png" alt="Sign Up icon">
+                        <p>Sign Up</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./log-in.html">
+                        <img src="./../images/log-in.png" alt="Log In Icon">
+                        <p>Log In</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 class="main-heading">Add Courses</h1>
+
+    <form class="courses-cards-form">
+        <h2>Enter Course Details</h2>
+        <input class="input-field" type="text" id="course-image-url" placeholder="Enter URL of Course Image:" required>
+        <input class="input-field" id="course-title" type="text" placeholder="Enter Title:" required>
+        <input class="input-field" id="course-description" type="text" placeholder="Enter Description:" required>
+        <input class="input-field" id="course-date" type="text" placeholder="Enter Starting Date:" required>
+        <input class="input-field" id="course-time" type="text" placeholder="Enter Class Time:" required>
+        <input class="input-field" type="text" id="instructor-image-url" placeholder="Enter URL of Instructor Image:"
+            required>
+        <input class="input-field" id="course-instructor-name" type="text" placeholder="Enter Instructor Name:"
+            required>
+        <input class="input-field" id="course-price" type="text" placeholder="Enter Price:" required>
+        <button type="button" class="btn-add" onclick="addcard()">Add Card</button>
+    </form>
+    <script src="./../script.js"></script>
+</body>
+
+</html>
