@@ -60,8 +60,12 @@ input {
 }
 
 @media (max-width: 600px) {
-  .name-container div label {
+  .hide-label {
     display: none;
+  }
+
+  .dob-container {
+    flex-direction: column;
   }
 
   .name-container div input {
