@@ -78,7 +78,7 @@ function renderCards() {
       </div>
               <hr>
       <div class="course-instructor">
-          <img src="${element.InstructorImageURL}"/ class="instructor-image">
+          <img src="${element.InstructorImageURL}" class="instructor-image">
           <div>
               <p><strong>Instructor:</strong> ${element.courseInstructor}</p>
               <p> Instructor </p>
@@ -92,7 +92,24 @@ function renderCards() {
 }
 renderCards();
 
-// function filterCards() {
+// Doubt Here
 
-// renderCards();
-// }
+// If I use these declaration here just above the toggleEye(), it won't run toggleEye() onclick
+
+// Why this Behaviour????????????????????????????????????????????????????????????????
+
+// const eyePasswordIcon = document.getElementById("eye-closed-icon");
+// const loginPasswordField = document.getElementById("login-password-field");
+
+function toggleEye() {
+  const eyePasswordIcon = document.getElementById("eye-closed-icon");
+  const loginPasswordField = document.getElementById("login-password-field");
+
+  if (loginPasswordField.type === "password") {
+    loginPasswordField.type = "text";
+    eyePasswordIcon.src = "./../images/eye-open.png";
+  } else {
+    loginPasswordField.type = "password";
+    eyePasswordIcon.src = "./../images/eye-closed.png";
+  }
+}

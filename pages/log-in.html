@@ -45,8 +45,11 @@
             <!-- <label for="enter-username">Enter Username</label> -->
             <input type="text" id="enter-username" name="enter-username" placeholder="Enter username" required>
 
-            <!-- <label for="enter-password">Enter Password</label> -->
-            <input type="password" id="enter-password" name="enter-password" placeholder="Enter password" required>
+            <div class="login-password-container">
+                <!-- <label for="enter-password">Enter Password</label> -->
+                <input id="login-password-field" type="password" name="enter-password" placeholder="Enter password" required>
+                <img id="eye-closed-icon" src="./../images/eye-closed.png" alt="Eye CLosed Icon" onclick="toggleEye()">
+            </div>
         </form>
 
         <div class="login-button-container">
@@ -60,7 +63,7 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="./../script.js"></script>
 </body>
 
 </html>

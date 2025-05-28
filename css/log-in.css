@@ -35,6 +35,25 @@
   letter-spacing: 0.5px;
 }
 
+.login-password-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#login-password-field {
+  width: 100%;
+}
+
+#eye-closed-icon {
+  width: 25px;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+
 .login-button-container {
   display: flex;
   flex-direction: column;
