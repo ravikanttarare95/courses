@@ -23,5 +23,16 @@ h2 {
   border: 1px solid #ddd;
   border-radius: 4px;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 1 rem;
+}
+
+@media (max-width: 600px) {
+  .courses-cards-form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .input-field {
+    font-size: 0.9rem;
+  }
 }
