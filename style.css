@@ -118,7 +118,6 @@ nav {
 .user-icon-container img {
   width: 100%;
   filter: brightness(0.8) invert(1);
-  display: block;
 }
 
 
