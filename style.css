@@ -9,6 +9,32 @@ body {
   background-color: #f5f5f5;
 }
 
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+}
+
+.btn-secondary {
+  background-color: #2c83e7;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #1e6bb8;
+}
+
 .main-heading {
   text-align: center;
   font-family: Arial, sans-serif;
