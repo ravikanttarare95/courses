@@ -36,54 +36,62 @@
             </div>
         </div>
     </nav>
-    <form>
-        <div class="sign-up-container">
-            <div class="name-container">
-                <div>
-                    <label class="hide-label" for="enter-name">Enter First Name: </label>
-                    <input type="text" id="enter-name" placeholder="First Name:" required>
+
+    <div class="main-sign-up-conntainer">
+        <form>
+            <div class="sign-up-container">
+                <div class="name-container">
+                    <div>
+                        <label class="hide-label" for="enter-name">Enter First Name: </label>
+                        <input type="text" id="enter-name" placeholder="First Name:" required>
+                    </div>
+                    <div>
+                        <label class="hide-label" for="enter-name">Enter Middle Name: </label>
+                        <input type="text" id="enter-middle-name" placeholder="Middle Name:" required>
+                    </div>
+                    <div>
+                        <label class="hide-label" for="enter-name">Enter Last Name: </label>
+                        <input type="text" id="enter-last-name" placeholder="Last Name:" required>
+                    </div>
+
+                    <div>
+                        <label class="hide-label" for="enter-mobile-number">Enter Mobile Number: </label>
+                        <input type="number" id="enter-mobile-number" placeholder="+918275957698" required>
+                    </div>
+                    <div>
+                        <label class="hide-label" for="enter-mobile-number">Enter Email Id: </label>
+                        <input type="email" id="enter-email" placeholder="abcd@gmail.com">
+                    </div>
+                    <div>
+                        <label class="hide-label" for="enter-mobile-number">Enter College Name: </label>
+                        <input type="text" id="enter-college-name" placeholder="College Name:">
+                    </div>
+                    <div class="dob-container">
+                        <label for="choose-date-of-birth">Choose DOB: </label>
+                        <input type="date" id="choose-date-of-birth" required>
+                    </div>
                 </div>
-                <div>
-                    <label class="hide-label" for="enter-name">Enter Middle Name: </label>
-                    <input type="text" id="enter-middle-name" placeholder="Middle Name:" required>
-                </div>
-                <div>
-                    <label class="hide-label" for="enter-name">Enter Last Name: </label>
-                    <input type="text" id="enter-last-name" placeholder="Last Name:" required>
+                <div class="radio-btn-container">
+                    <div>
+                        <input type="radio" id="gender-female" name="gender"><label for="gender-female">Female</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="gender-male" name="gender"><label for="gender-male">Male</label>
+                    </div>
                 </div>
 
-                <div>
-                    <label class="hide-label" for="enter-mobile-number">Enter Mobile Number: </label>
-                    <input type="number" id="enter-mobile-number" placeholder="+918275957698" required>
-                </div>
-                <div>
-                    <label class="hide-label" for="enter-mobile-number">Enter Email Id: </label>
-                    <input type="email" id="enter-email" placeholder="abcd@gmail.com">
-                </div>
-                <div>
-                    <label class="hide-label" for="enter-mobile-number">Enter College Name: </label>
-                    <input type="text" id="enter-college-name" placeholder="College Name:">
-                </div>
-                <div class="dob-container">
-                    <label for="choose-date-of-birth">Choose DOB: </label>
-                    <input type="date" id="choose-date-of-birth" required>
-                </div>
+                <input type="text" id="new-password" placeholder="New Password" required>
+                <input type="text" id="confirm-new-password" placeholder="Confirm New Password" required>
+
+                <button class="btn btn-primary">Sign Up</button>
             </div>
-            <div class="radio-btn-container">
-                <div>
-                    <input type="radio" id="gender-female" name="gender"><label for="gender-female">Female</label>
-                </div>
-                <div>
-                    <input type="radio" id="gender-male" name="gender"><label for="gender-male">Male</label>
-                </div>
-            </div>
+        </form>
 
-            <input type="text" id="new-password" placeholder="New Password" required>
-            <input type="text" id="confirm-new-password" placeholder="Confirm New Password" required>
-
-            <button class="btn btn-primary">Sign Up</button>
+        <div class="sign-up-image-container">
+            <img id="main-sign-up-image" src="./../images/main-sign-in-image.png
+        " alt="Sign Up Image">
         </div>
-    </form>
+    </div>
 </body>
 
 </html>

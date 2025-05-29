@@ -1,3 +1,18 @@
+.main-sign-up-conntainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sign-up-image-container {
+  max-width: 550px;
+  width: 100%;
+}
+
+#main-sign-up-image {
+  width: 100%;
+}
+
 form {
   padding: 20px;
 }
