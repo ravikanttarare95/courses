@@ -56,7 +56,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding: 20px 10px;
   background-color: #0a2647;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -121,6 +121,42 @@ nav {
   display: block;
 }
 
+.login-link {
+  text-align: center;
+  /* display: flex; */
+  /* flex-direction: row;      This won't work here because we are using display:block to show login info*/
+  line-height: 35px;
+  padding: 16px;
+  background-color: #103d70;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.hidden-login-link {
+  top: -90px;
+  display: none;
+}
+
+.login-link a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #ababab;
+}
+
+@media (min-width: 601px) {
+  .show-login-link {
+    top: 0px;
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .navbar {
     display: flex;
@@ -147,5 +183,10 @@ nav {
   .courses-cards-form {
     width: 90%;
     padding: 20px;
+  }
+
+  .show-login-link {
+    top: 0px;
+    display: block;
   }
 }

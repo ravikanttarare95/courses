@@ -34,12 +34,16 @@
                 </li>
             </ul>
             <div class="user-icon-container">
-                <img src="./images/profile-user.png" alt="user profile icon">
+                <img src="./images/profile-user.png" alt="user profile icon" onclick="showHiddenLoginInfo()">
             </div>
         </div>
     </nav>
+    <div class="login-link hidden-login-link" id="hidden-login-info">
+        <p><a href="./pages/sign-up.html">Sign Up</a></p>
+        <p><a href="./pages/log-in.html">Log In</a></p>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

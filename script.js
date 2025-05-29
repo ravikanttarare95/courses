@@ -115,3 +115,16 @@ function toggleEye() {
     eyePasswordIcon.src = "./../images/eye-closed.png";
   }
 }
+
+function showHiddenLoginInfo() {
+  // There is some BUG here
+  const loginInfo = document.getElementById("hidden-login-info");
+
+  if (loginInfo.className.includes("hidden-login-link")) {
+    loginInfo.classList.add("show-login-link");
+    loginInfo.classList.remove("hidden-login-link");
+  } else {
+    loginInfo.classList.remove("show-login-link");
+    loginInfo.classList.add("hidden-login-link");
+  }
+}
