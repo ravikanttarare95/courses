@@ -1,12 +1,11 @@
-.main-sign-up-conntainer {
+.main-sign-up-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .sign-up-image-container {
-  max-width: 550px;
-  width: 100%;
+  width: 550px;
 }
 
 #main-sign-up-image {
@@ -15,10 +14,11 @@
 
 form {
   padding: 20px;
+  width: 700px;
 }
 
 .sign-up-container {
-  max-width: 550px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -72,6 +72,26 @@ input {
 .radio-btn-container div {
   display: flex;
   gap: 5px;
+}
+
+@media (max-width: 1024px) {
+  .main-sign-up-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 700px) {
+  form {
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .sign-up-image-container {
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 600px) {
