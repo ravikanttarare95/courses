@@ -38,31 +38,35 @@
         </div>
     </nav>
 
-    <div class="login-form-container">
-        <img class="login-user-icon" src="./../images/profile-user.png" alt="user profile icon">
+    <div class="main-container-login">
+        <div class="login-form-container">
+            <img class="login-user-icon" src="./../images/profile-user.png" alt="user profile icon">
 
-        <form class="login-form">
-            <!-- <label for="enter-username">Enter Username</label> -->
-            <input type="text" id="enter-username" name="enter-username" placeholder="Enter username" required>
+            <form class="login-form">
+                <!-- <label for="enter-username">Enter Username</label> -->
+                <input type="text" id="enter-username" name="enter-username" placeholder="Enter username" required>
 
-            <div class="login-password-container">
-                <!-- <label for="enter-password">Enter Password</label> -->
-                <input id="login-password-field" type="password" name="enter-password" placeholder="Enter password"
-                    required>
-                <img id="eye-closed-icon" src="./../images/eye-closed.png" alt="Eye CLosed Icon" onclick="toggleEye()">
-            </div>
-        </form>
+                <div class="login-password-container">
+                    <!-- <label for="enter-password">Enter Password</label> -->
+                    <input id="login-password-field" type="password" name="enter-password" placeholder="Enter password"
+                        required>
+                    <img id="eye-closed-icon" src="./../images/eye-closed.png" alt="Eye CLosed Icon"
+                        onclick="toggleEye()">
+                </div>
+            </form>
 
-        <div class="login-button-container">
-            <button class="btn btn-primary" type="button">Log In</button>
-            <div class="forgot-password-container">
-                <p class="forgot-password" style="text-align: start;"><a href="">Create new account</a></p>
-                <p class="forgot-password" style="text-align: end;"><a href="">Forgot your password?</a></p>
+            <div class="login-button-container">
+                <button class="btn btn-primary" type="button">Log In</button>
+                <div class="forgot-password-container">
+                    <p class="forgot-password" style="text-align: start;"><a href="">Create new account</a></p>
+                    <p class="forgot-password" style="text-align: end;"><a href="">Forgot your password?</a></p>
+                </div>
             </div>
         </div>
-
+        <div class="login-image-container">
+            <img id="main-login-image" src="./../images/login-amico.png" alt="Login Image">
+        </div>
     </div>
-
     <script src="./../script.js"></script>
 </body>
 

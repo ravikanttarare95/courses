@@ -1,9 +1,25 @@
+.main-container-login {
+  margin: 100px auto 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-image-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+#main-login-image {
+  width: 100%;
+}
+
 .login-form-container {
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 100%;
   max-width: 400px;
-  margin: 100px auto 0;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 8px;
