@@ -88,10 +88,16 @@
   text-decoration: none;
 }
 
+@media (max-width: 991px) {
+  .main-container-login {
+    flex-direction: column-reverse;
+    margin: 0 auto 0;
+  }
+}
+
 @media (max-width: 600px) {
   .login-form-container {
     width: 90%;
-    margin: 50px auto;
   }
 
   .login-form input {
