@@ -14,7 +14,7 @@
 .login-user-icon {
   width: 30px;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .login-form {
@@ -58,8 +58,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
   gap: 20px;
+}
+
+.forgot-password-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .forgot-password a {
@@ -81,8 +86,7 @@
     font-size: 1rem;
   }
 
-  .login-button-container {
-    flex-direction: column;
-    gap: 10px;
+  .forgot-password-container {
+    gap: 20px;
   }
 }
