@@ -1,12 +1,9 @@
 let cardContainer = document.getElementById("cards-container");
 let productTitle = document.getElementById("product-title");
 let productDescription = document.getElementById("product-description");
-let productDate = document.getElementById("product-date");
-let productTime = document.getElementById("product-time");
-let productInstructor = document.getElementById("product-instructor-name");
+let productCategory = document.getElementById("product-category");
 let productPrice = document.getElementById("product-price");
 let productImageURL = document.getElementById("product-image-url");
-let InstructorImageURL = document.getElementById("instructor-image-url");
 
 let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
 
@@ -15,10 +12,7 @@ function addcard() {
     !productImageURL.value ||
     !productTitle.value ||
     !productDescription.value ||
-    !productDate.value ||
-    !productTime.value ||
-    !InstructorImageURL.value ||
-    !productInstructor.value ||
+    !productCategory.value ||
     !productPrice.value
   ) {
     alert("Please fill in all fields.");
@@ -29,10 +23,7 @@ function addcard() {
     productImageURL: productImageURL.value,
     productTitle: productTitle.value,
     productDescription: productDescription.value,
-    productDate: productDate.value,
-    productTime: productTime.value,
-    InstructorImageURL: InstructorImageURL.value,
-    productInstructor: productInstructor.value,
+    productCategory: productCategory.value,
     productPrice: productPrice.value,
   };
   existingCards.push(newCard);
@@ -48,13 +39,9 @@ function clearInput() {
   productImageURL.value = "";
   productTitle.value = "";
   productDescription.value = "";
-  productDate.value = "";
-  productTime.value = "";
-  InstructorImageURL.value = "";
-  productInstructor.value = "";
+  productCategory.value = "";
   productPrice.value = "";
 }
-
 
 renderCards();
 

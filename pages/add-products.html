@@ -40,16 +40,19 @@
     <h1 class="main-heading">Add products</h1>
 
     <form class="products-cards-form">
-        <h2>Enter product Details</h2>
-        <input class="input-field" type="text" id="product-image-url" placeholder="Enter URL of product Image:" required>
+        <h2>Enter Product Details</h2>
+        <input class="input-field" type="text" id="product-image-url" placeholder="Enter URL of product Image:"
+            required>
         <input class="input-field" id="product-title" type="text" placeholder="Enter Title:" required>
+        <select class="input-select" name="product-category" id="product-category">
+            <option value="">Select Category:</option>
+            <option value="electronics">Electronics</option>
+            <option value="mobile">Mobile</option>
+            <option value="fashion">Fashion</option>
+            <option value="furniture">Furniture</option>
+            <option value="grocery">Grocery</option>
+        </select>
         <input class="input-field" id="product-description" type="text" placeholder="Enter Description:" required>
-        <input class="input-field" id="product-date" type="text" placeholder="Enter Starting Date:" required>
-        <input class="input-field" id="product-time" type="text" placeholder="Enter Class Time:" required>
-        <input class="input-field" type="text" id="instructor-image-url" placeholder="Enter URL of Instructor Image:"
-            required>
-        <input class="input-field" id="product-instructor-name" type="text" placeholder="Enter Instructor Name:"
-            required>
         <input class="input-field" id="product-price" type="text" placeholder="Enter Price:" required>
         <button class="btn btn-primary" type="button" class="btn-add" onclick="addcard()">Add Card</button>
     </form>
