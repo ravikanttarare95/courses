@@ -1,25 +1,26 @@
 // document.addEventListener("DOMContentLoaded", () => {
-  const cardContainer = document.getElementById("cards-container");
-  const selectProduct = document.getElementById("select-product");
+const cardContainer = document.getElementById("cards-container");
+const selectProduct = document.getElementById("select-product");
 
-  let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
+let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
 
-  function renderCards() {
-    cardContainer.innerHTML = "";
-    const categorySelected = selectProduct.value || "all";
-    let filteredCards = existingCards;
+function renderCards() {
+  cardContainer.innerHTML = "";
+  const categorySelected = selectProduct.value || "all";
+  let filteredCards = existingCards;
 
-    if (categorySelected !== "all") {
-      filteredCards = existingCards.filter(
-        (element) =>
-          element?.productCategory?.toLowerCase() ===
-          categorySelected.toLowerCase()
-      );
-    }
+  if (categorySelected !== "all") {
+    filteredCards = existingCards.filter(
+      (element) =>
+        element?.productCategory?.toLowerCase() ===
+        categorySelected.toLowerCase()
+    );
+  }
 
-    filteredCards.forEach((element) => {
-      cardContainer.innerHTML += `
+  filteredCards.forEach((element, index) => {
+    cardContainer.innerHTML += `
                 <div class="card">
+                <img src="../images/trash.png" alt="Delete Icon" class="card-delete-icon" data-index="${index}"/>
                     <img src="${
                       element.productImageURL
                     }" alt="Product Image" class="product-image"/>
@@ -37,9 +38,30 @@
                     </div>
                 </div>
             `;
-    });
-  }
+  });
+}
 
-  selectProduct.addEventListener("change", renderCards);
+selectProduct.addEventListener("change", () => {
   renderCards();
+});
+
+cardContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("card-delete-icon")) {
+    const confirmDelete = confirm(
+      "Do you want to delete it? It cannot be recovered once deleted."
+    );
+
+    // if (!confirmDelete) return;
+    if (confirmDelete === false) {
+      return;
+    }
+
+    const dataIndex = e.target.dataset.index;
+    existingCards.splice(dataIndex, 1);
+    localStorage.setItem("productCards", JSON.stringify(existingCards));
+    renderCards();
+  }
+});
+renderCards();
+
 // });
