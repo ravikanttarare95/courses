@@ -1,29 +1,45 @@
-function renderCards() {
-  cardContainer.innerHTML = "";
+// document.addEventListener("DOMContentLoaded", () => {
+  const cardContainer = document.getElementById("cards-container");
+  const selectProduct = document.getElementById("select-product");
 
-  // const categorySelected = document.getElementById("select-Product").value;
-  // let filteredProductTitle = existingCards;
+  let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
 
-  // if (categorySelected !== "all") {
-  //   filteredProductTitle = existingCards.filter((element) => {
-  //     return element.productTitle === categorySelected;
-  //   });
-  // }
+  function renderCards() {
+    cardContainer.innerHTML = "";
+    const categorySelected = selectProduct.value || "all";
+    let filteredCards = existingCards;
 
-  existingCards.map((element) => {
-    cardContainer.innerHTML += `
-      <div class="card">
+    if (categorySelected !== "all") {
+      filteredCards = existingCards.filter(
+        (element) =>
+          element?.productCategory?.toLowerCase() ===
+          categorySelected.toLowerCase()
+      );
+    }
 
-        <img src="${element.productImageURL}" alt="Product Image" class="product-image"/>
-        <div class="product-details">
-          <h3 class="product-title">${element.productTitle}</h3>
-          <p class="product-category">${element.productCategory}</p>
-          <p class="product-description">${element.productDescription}</p>
-          <p class="price"><strong>Price:</strong> ₹${element.productPrice}</p>
-        </div>
+    filteredCards.forEach((element) => {
+      cardContainer.innerHTML += `
+                <div class="card">
+                    <img src="${
+                      element.productImageURL
+                    }" alt="Product Image" class="product-image"/>
+                    <div class="product-details">
+                        <h3 class="product-title">${element.productTitle}</h3>
+                        <p class="product-category">${
+                          element.productCategory || "N/A"
+                        }</p>
+                        <p class="product-description">${
+                          element.productDescription || ""
+                        }</p>
+                        <p class="price"><strong>Price:</strong> ₹${
+                          element.productPrice || 0
+                        }</p>
+                    </div>
+                </div>
+            `;
+    });
+  }
 
-      </div>
-    `;
-  });
-}
-renderCards();
+  selectProduct.addEventListener("change", renderCards);
+  renderCards();
+// });
