@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Courses</title>
-    <link rel="stylesheet" href="./../css/all-courses.css">
+    <title>All products</title>
+    <link rel="stylesheet" href="./../css/all-products.css">
     <link rel="stylesheet" href="./../style.css">
 </head>
 
@@ -13,9 +13,9 @@
     <nav>
         <div class="navbar">
             <ul class="nav-list">
-                <li class="nav-item"><a href="./../index.html">Home</a></li>
-                <li class="nav-item"><a href="./../pages/add-courses.html">Add Courses</a></li>
-                <li class="nav-item"><a href="./all-courses.html">All Courses</a></li>
+                <li class="nav-item"><a href="../index.html">Home</a></li>
+                <li class="nav-item"><a href="./../pages/add-products.html">Add products</a></li>
+                <li class="nav-item"><a href="./all-products.html">All products</a></li>
             </ul>
 
             <ul class="nav-login-container">
@@ -38,12 +38,12 @@
         </div>
     </nav>
 
-    <h1 class="main-heading">All Courses</h1>
+    <h1 class="main-heading">All products</h1>
 
-    <div class="filter-container">
+    <!-- <div class="filter-container">
         <form>
-            <label for="select-Course">Filter Courses:</label>
-            <select name="select-Course" id="select-Course" onchange="renderCards()">
+            <label for="select-product">Filter products:</label>
+            <select name="select-product" id="select-product" onchange="renderCards()">
                 <option value="all">All</option>
                 <option value="aws">AWS</option>
                 <option value="web">WEB</option>
@@ -51,10 +51,11 @@
                 <option value="android">Android</option>
             </select>
         </form>
-    </div>
+    </div> -->
 
     <div class="cards-container" id="cards-container"> </div>
     <script src="./../script.js"></script>
+    <script src="./../javascript/all-products.js"></script>
 </body>
 
 </html>

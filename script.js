@@ -1,42 +1,42 @@
 let cardContainer = document.getElementById("cards-container");
-let courseTitle = document.getElementById("course-title");
-let courseDescription = document.getElementById("course-description");
-let courseDate = document.getElementById("course-date");
-let courseTime = document.getElementById("course-time");
-let courseInstructor = document.getElementById("course-instructor-name");
-let coursePrice = document.getElementById("course-price");
-let courseImageURL = document.getElementById("course-image-url");
+let productTitle = document.getElementById("product-title");
+let productDescription = document.getElementById("product-description");
+let productDate = document.getElementById("product-date");
+let productTime = document.getElementById("product-time");
+let productInstructor = document.getElementById("product-instructor-name");
+let productPrice = document.getElementById("product-price");
+let productImageURL = document.getElementById("product-image-url");
 let InstructorImageURL = document.getElementById("instructor-image-url");
 
-let existingCards = JSON.parse(localStorage.getItem("CourseCards")) || [];
+let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
 
 function addcard() {
   if (
-    !courseImageURL.value ||
-    !courseTitle.value ||
-    !courseDescription.value ||
-    !courseDate.value ||
-    !courseTime.value ||
+    !productImageURL.value ||
+    !productTitle.value ||
+    !productDescription.value ||
+    !productDate.value ||
+    !productTime.value ||
     !InstructorImageURL.value ||
-    !courseInstructor.value ||
-    !coursePrice.value
+    !productInstructor.value ||
+    !productPrice.value
   ) {
     alert("Please fill in all fields.");
     return;
   }
 
   let newCard = {
-    courseImageURL: courseImageURL.value,
-    courseTitle: courseTitle.value,
-    courseDescription: courseDescription.value,
-    courseDate: courseDate.value,
-    courseTime: courseTime.value,
+    productImageURL: productImageURL.value,
+    productTitle: productTitle.value,
+    productDescription: productDescription.value,
+    productDate: productDate.value,
+    productTime: productTime.value,
     InstructorImageURL: InstructorImageURL.value,
-    courseInstructor: courseInstructor.value,
-    coursePrice: coursePrice.value,
+    productInstructor: productInstructor.value,
+    productPrice: productPrice.value,
   };
   existingCards.push(newCard);
-  localStorage.setItem("CourseCards", JSON.stringify(existingCards));
+  localStorage.setItem("productCards", JSON.stringify(existingCards));
   alert(`
 Course added successfully!
 Check your Card in All Courses Page!`);
@@ -45,53 +45,17 @@ Check your Card in All Courses Page!`);
 }
 
 function clearInput() {
-  courseImageURL.value = "";
-  courseTitle.value = "";
-  courseDescription.value = "";
-  courseDate.value = "";
-  courseTime.value = "";
+  productImageURL.value = "";
+  productTitle.value = "";
+  productDescription.value = "";
+  productDate.value = "";
+  productTime.value = "";
   InstructorImageURL.value = "";
-  courseInstructor.value = "";
-  coursePrice.value = "";
+  productInstructor.value = "";
+  productPrice.value = "";
 }
 
-function renderCards() {
-  cardContainer.innerHTML = "";
 
-  const categorySelected = document.getElementById("select-Course").value;
-  let filteredCourseTitle = existingCards;
-
-  if (categorySelected !== "all") {
-    filteredCourseTitle = existingCards.filter((element) => {
-      return element.courseTitle === categorySelected;
-    });
-  }
-
-  filteredCourseTitle.map((element) => {
-    cardContainer.innerHTML += `
-      <div class="card">
-
-        <img src="${element.courseImageURL}" alt="Course Image" class="course-image"/>
-      <div class="course-details">
-        <h3 class="course-title">${element.courseTitle}</h3>
-        <p class="course-description">${element.courseDescription}</p>
-        <p class="course-date">🗓️ <strong>Date:</strong> ${element.courseDate}</p>
-        <p class="course-time">⏱️ <strong>Time:</strong> ${element.courseTime}</p>
-      </div>
-              <hr>
-      <div class="course-instructor">
-          <img src="${element.InstructorImageURL}" class="instructor-image">
-          <div>
-              <p><strong>Instructor:</strong> ${element.courseInstructor}</p>
-              <p> Instructor </p>
-          </div>
-      </div>
-              <hr>
-          <p class="price"><strong>Price:</strong> ₹${element.coursePrice}</p>
-      </div>
-    `;
-  });
-}
 renderCards();
 
 // Doubt Here

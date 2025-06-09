@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Courses</title>
+    <title>Add products</title>
     <link rel="stylesheet" href="./../style.css">
-    <link rel="stylesheet" href="./../css/add-courses.css">
+    <link rel="stylesheet" href="./../css/add-products.css">
 </head>
 
 <body>
@@ -14,8 +14,8 @@
         <div class="navbar">
             <ul class="nav-list">
                 <li class="nav-item"><a href="./../index.html">Home</a></li>
-                <li class="nav-item"><a href="./add-courses.html">Add Courses</a></li>
-                <li class="nav-item"><a href="./../pages/all-courses.html">All Courses</a></li>
+                <li class="nav-item"><a href="./add-products.html">Add products</a></li>
+                <li class="nav-item"><a href="./../pages/all-products.html">All products</a></li>
             </ul>
             <ul class="nav-login-container">
                 <li>
@@ -37,20 +37,20 @@
         </div>
     </nav>
 
-    <h1 class="main-heading">Add Courses</h1>
+    <h1 class="main-heading">Add products</h1>
 
-    <form class="courses-cards-form">
-        <h2>Enter Course Details</h2>
-        <input class="input-field" type="text" id="course-image-url" placeholder="Enter URL of Course Image:" required>
-        <input class="input-field" id="course-title" type="text" placeholder="Enter Title:" required>
-        <input class="input-field" id="course-description" type="text" placeholder="Enter Description:" required>
-        <input class="input-field" id="course-date" type="text" placeholder="Enter Starting Date:" required>
-        <input class="input-field" id="course-time" type="text" placeholder="Enter Class Time:" required>
+    <form class="products-cards-form">
+        <h2>Enter product Details</h2>
+        <input class="input-field" type="text" id="product-image-url" placeholder="Enter URL of product Image:" required>
+        <input class="input-field" id="product-title" type="text" placeholder="Enter Title:" required>
+        <input class="input-field" id="product-description" type="text" placeholder="Enter Description:" required>
+        <input class="input-field" id="product-date" type="text" placeholder="Enter Starting Date:" required>
+        <input class="input-field" id="product-time" type="text" placeholder="Enter Class Time:" required>
         <input class="input-field" type="text" id="instructor-image-url" placeholder="Enter URL of Instructor Image:"
             required>
-        <input class="input-field" id="course-instructor-name" type="text" placeholder="Enter Instructor Name:"
+        <input class="input-field" id="product-instructor-name" type="text" placeholder="Enter Instructor Name:"
             required>
-        <input class="input-field" id="course-price" type="text" placeholder="Enter Price:" required>
+        <input class="input-field" id="product-price" type="text" placeholder="Enter Price:" required>
         <button class="btn btn-primary" type="button" class="btn-add" onclick="addcard()">Add Card</button>
     </form>
     <script src="./../script.js"></script>
