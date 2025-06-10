@@ -104,5 +104,5 @@ function calculateFinalPrice() {
 
   const discount = mrpValue * (perDiscountValue / 100);
 
-  finalPrice.innerText = `₹${mrpValue - discount}`;
+  finalPrice.innerText = `₹${Math.round(mrpValue - discount)}`;
 }
