@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="./../style.css">
-    <link rel="stylesheet" href="./../css/sign-up.css">
+    <link rel="stylesheet" href="../css/sign-up.css">
 </head>
 
 <body>
@@ -32,10 +32,14 @@
                 </li>
             </ul>
             <div class="user-icon-container">
-                <img src="./../images/profile-user.png" alt="user profile icon">
+                <img src="./../images/profile-user.png" alt="user profile icon" class="user-profile-icon">
             </div>
         </div>
     </nav>
+    <div class="login-link hidden-login-link" id="hidden-login-info">
+        <p><a href="./sign-up.html">Sign Up</a></p>
+        <p><a href="./log-in.html">Log In</a></p>
+    </div>
 
     <div class="main-sign-up-container">
         <form>
@@ -92,6 +96,7 @@
         " alt="Sign Up Image">
         </div>
     </div>
+    <script src="../script.js"></script>
 </body>
 
 </html>

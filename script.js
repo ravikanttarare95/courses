@@ -1,11 +1,11 @@
-let cardContainer = document.getElementById("cards-container");
+// let cardContainer = document.getElementById("cards-container");
 let productTitle = document.getElementById("product-title");
 let productDescription = document.getElementById("product-description");
 let productCategory = document.getElementById("product-category");
 let productMRP = document.getElementById("product-mrp");
 let productImageURL = document.getElementById("product-image-url");
 
-let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
+existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
 
 const btnAdd = document.querySelector(".btn-add");
 
@@ -76,6 +76,10 @@ function toggleEye() {
     eyePasswordIcon.src = "./../images/eye-closed.png";
   }
 }
+
+const userIcon = document.querySelector(".user-profile-icon");
+
+userIcon.addEventListener("click", showHiddenLoginInfo);
 
 function showHiddenLoginInfo() {
   // There is some BUG here
