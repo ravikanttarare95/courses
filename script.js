@@ -2,7 +2,7 @@ let cardContainer = document.getElementById("cards-container");
 let productTitle = document.getElementById("product-title");
 let productDescription = document.getElementById("product-description");
 let productCategory = document.getElementById("product-category");
-let productPrice = document.getElementById("product-price");
+let productMRP = document.getElementById("product-mrp");
 let productImageURL = document.getElementById("product-image-url");
 
 let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
@@ -17,7 +17,9 @@ function addCard() {
     !productTitle.value ||
     !productDescription.value ||
     !productCategory.value ||
-    !productPrice.value
+    !productMRP.value ||
+    !perDiscount.value ||
+    !finalPrice.value
   ) {
     alert("Please fill in all fields.");
     return;
@@ -28,7 +30,9 @@ function addCard() {
     productTitle: productTitle.value,
     productDescription: productDescription.value,
     productCategory: productCategory.value,
-    productPrice: productPrice.value,
+    productMRP: productMRP.value,
+    perDiscount: perDiscount.value,
+    finalPrice: finalPrice.value,
   };
   existingCards.push(newCard);
   localStorage.setItem("productCards", JSON.stringify(existingCards));
@@ -44,7 +48,9 @@ function clearInput() {
   productTitle.value = "";
   productDescription.value = "";
   productCategory.value = "";
-  productPrice.value = "";
+  productMRP.value = "";
+  perDiscount.value = "";
+  finalPrice.value = "";
 }
 
 // renderCards();
@@ -85,7 +91,7 @@ function showHiddenLoginInfo() {
 }
 
 const perDiscount = document.getElementById("product-discount");
-const mrp = document.getElementById("product-price");
+const mrp = document.getElementById("product-mrp");
 
 perDiscount.addEventListener("change", calculateFinalPrice);
 mrp.addEventListener("change", calculateFinalPrice);
@@ -93,7 +99,7 @@ mrp.addEventListener("change", calculateFinalPrice);
 function calculateFinalPrice() {
   const finalPrice = document.querySelector(".product-final-price");
 
-  const mrpValue = parseFloat(mrp.value) || 0;
+  const mrpValue = parseFloat(mrp.value.replace(",", "")) || 0;
   const perDiscountValue = parseFloat(perDiscount.value) || 0;
 
   const discount = mrpValue * (perDiscountValue / 100);

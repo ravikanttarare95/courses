@@ -21,20 +21,16 @@ function renderCards() {
     cardContainer.innerHTML += `
                 <div class="card">
                 <img src="../images/trash.png" alt="Delete Icon" class="card-delete-icon" data-index="${index}"/>
-                    <img src="${
-                      element.productImageURL
-                    }" alt="Product Image" class="product-image"/>
+                    <img src="${element.productImageURL}" alt="Product Image" class="product-image"/>
                     <div class="product-details">
                         <h3 class="product-title">${element.productTitle}</h3>
-                        <p class="product-category">${
-                          element.productCategory || "N/A"
-                        }</p>
-                        <p class="product-description">${
-                          element.productDescription || ""
-                        }</p>
-                        <p class="price"><strong>Price:</strong> ₹${
-                          element.productPrice || 0
-                        }</p>
+                        <p class="product-category">${element.productCategory}</p>
+                        <p class="product-description">${element.productDescription}</p>
+                        <p style="color:#25D366">(${element.perDiscount}% off)</p>
+                        <div class="card-price-container">
+                            <p class="mrp"><del>₹${element.productMRP}<del></p>
+                            <p class="final-price"><strong>₹${element.finalPrice}</strong></p>
+                        </div>
                     </div>
                 </div>
             `;
