@@ -7,7 +7,11 @@ let productImageURL = document.getElementById("product-image-url");
 
 let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
 
-function addcard() {
+const btnAdd = document.querySelector(".btn-add");
+
+btnAdd.addEventListener("click", addCard);
+
+function addCard() {
   if (
     !productImageURL.value ||
     !productTitle.value ||
@@ -29,8 +33,8 @@ function addcard() {
   existingCards.push(newCard);
   localStorage.setItem("productCards", JSON.stringify(existingCards));
   alert(`
-Course added successfully!
-Check your Card in All Courses Page!`);
+${productTitle.value} card added successfully!
+Check your Card in All products Page!`);
   clearInput();
   renderCards();
 }
@@ -43,7 +47,7 @@ function clearInput() {
   productPrice.value = "";
 }
 
-renderCards();
+// renderCards();
 
 // Doubt Here
 
@@ -71,11 +75,28 @@ function showHiddenLoginInfo() {
   // There is some BUG here
   const loginInfo = document.getElementById("hidden-login-info");
 
-  if (loginInfo.className.includes("hidden-login-link")) {
+  if (loginInfo.classList.contains("hidden-login-link")) {
     loginInfo.classList.add("show-login-link");
     loginInfo.classList.remove("hidden-login-link");
   } else {
     loginInfo.classList.remove("show-login-link");
     loginInfo.classList.add("hidden-login-link");
   }
+}
+
+const perDiscount = document.getElementById("product-discount");
+const mrp = document.getElementById("product-price");
+
+perDiscount.addEventListener("change", calculateFinalPrice);
+mrp.addEventListener("change", calculateFinalPrice);
+
+function calculateFinalPrice() {
+  const finalPrice = document.querySelector(".product-final-price");
+
+  const mrpValue = parseFloat(mrp.value) || 0;
+  const perDiscountValue = parseFloat(perDiscount.value) || 0;
+
+  const discount = mrpValue * (perDiscountValue / 100);
+
+  finalPrice.innerText = `₹${mrpValue - discount}`;
 }
