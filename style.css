@@ -138,7 +138,6 @@ nav {
 
 /*---IMP---*/
 .hidden-login-link {
-  top: -90px;
   display: none;
 }
 
@@ -181,10 +180,10 @@ footer {
 }
 
 @media (min-width: 601px) {
-  .show-login-link {
+  /* .show-login-link {
     top: 0px;
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 600px) {
@@ -207,11 +206,6 @@ footer {
   }
 
   .user-icon-container {
-    display: block;
-  }
-
-  .show-login-link {
-    top: 0px;
     display: block;
   }
 
