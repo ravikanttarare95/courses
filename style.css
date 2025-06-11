@@ -58,7 +58,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   /* margin-bottom: 20px; */
-  padding: 20px 10px;
+  padding: 25px 10px;
   background-color: #0a2647;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -152,6 +152,34 @@ nav {
   color: #ababab;
 }
 
+footer {
+  padding: 10px;
+  background-color: #0a2647;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-content img {
+  width: 35px;
+  filter: invert(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-content:hover img {
+  box-shadow: 0 0 10px #333333;
+  border-radius: 50%;
+}
+
 @media (min-width: 601px) {
   .show-login-link {
     top: 0px;
@@ -185,5 +213,14 @@ nav {
   .show-login-link {
     top: 0px;
     display: block;
+  }
+
+  .footer-content a {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .footer-content img {
+    width: 30px;
   }
 }
