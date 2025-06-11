@@ -5,6 +5,7 @@ let productMRP = document.getElementById("product-mrp");
 let productImageURL = document.getElementById("product-image-url");
 const perDiscount = document.getElementById("product-discount");
 const finalPrice = document.querySelector(".product-final-price");
+let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
 
 const btnAdd = document.querySelector(".btn-add");
 
