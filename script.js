@@ -4,8 +4,10 @@ let productDescription = document.getElementById("product-description");
 let productCategory = document.getElementById("product-category");
 let productMRP = document.getElementById("product-mrp");
 let productImageURL = document.getElementById("product-image-url");
-
-existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
+const perDiscount = document.getElementById("product-discount");
+const mrp = document.getElementById("product-mrp");
+const finalPrice = document.querySelector(".product-final-price");
+let existingCards = JSON.parse(localStorage.getItem("productCards")) || [];
 
 const btnAdd = document.querySelector(".btn-add");
 
@@ -19,7 +21,7 @@ function addCard() {
     !productCategory.value ||
     !productMRP.value ||
     !perDiscount.value ||
-    !finalPrice.value
+    !finalPrice.innerText
   ) {
     alert("Please fill in all fields.");
     return;
@@ -32,7 +34,7 @@ function addCard() {
     productCategory: productCategory.value,
     productMRP: productMRP.value,
     perDiscount: perDiscount.value,
-    finalPrice: finalPrice.value,
+    finalPrice: finalPrice.innerText,
   };
   existingCards.push(newCard);
   localStorage.setItem("productCards", JSON.stringify(existingCards));
@@ -50,7 +52,7 @@ function clearInput() {
   productCategory.value = "";
   productMRP.value = "";
   perDiscount.value = "";
-  finalPrice.value = "";
+  finalPrice.innerText = "";
 }
 
 // renderCards();
@@ -94,16 +96,11 @@ function showHiddenLoginInfo() {
   }
 }
 
-const perDiscount = document.getElementById("product-discount");
-const mrp = document.getElementById("product-mrp");
-
 perDiscount.addEventListener("change", calculateFinalPrice);
 mrp.addEventListener("change", calculateFinalPrice);
 
 function calculateFinalPrice() {
-  const finalPrice = document.querySelector(".product-final-price");
-
-  const mrpValue = parseFloat(mrp.value.replace(",", "")) || 0;
+  const mrpValue = parseFloat(mrp.value.replace(/,/g, "")) || 0;
   const perDiscountValue = parseFloat(perDiscount.value) || 0;
 
   const discount = mrpValue * (perDiscountValue / 100);
